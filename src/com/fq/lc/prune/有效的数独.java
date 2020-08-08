@@ -15,9 +15,6 @@ import java.util.*;
 public class 有效的数独 {
 
     public boolean isValidSudoku(char[][] board) {
-        List<Set<Character>> columnSet = new ArrayList<>();
-        List<Set<Character>> rowSet = new ArrayList<>();
-        List<Set<Character>> boxSet = new ArrayList<>();
         // 判断每行中是否有重复元素
         for (int i = 0; i < 9; i++) {
             Set<Character> set = new HashSet<>();
