@@ -16,21 +16,19 @@ package com.fq.lc.binarysearch;
 public class 旋转数组的最小数字 {
 
     public int minArray(int[] numbers) {
-        int i = 0;
-        int j = numbers.length - 1;
-        // 3 4 5 6 7 1 2
-        // 一开始左边大于右边的
-        while(numbers[i] > numbers[j]) {
-            int mid = (j - i) / 2 + i;
-            // 如果左边小于中间的 左边是递增 最小值肯定在右边
-            if (numbers[i] < numbers[mid]) {
-                i = mid + 1;
+        int left = 0;
+        int right = numbers.length - 1;
+        while(left < right) {
+            int mid = (right - left) / 2 + left;
+            if(numbers[mid] > numbers[right]) {
+                left = mid + 1;
+            } else if(numbers[mid] == numbers[right]) {
+                // 如果相等只能右边指针往左移
+                right--;
             } else {
-                // 如果中间小于等于的 那么最小的肯定在最左边
-                j = mid;
+                right = mid;
             }
         }
-        return Math.min(numbers[i], numbers[i + 1]);
+        return numbers[left];
     }
-
 }
