@@ -8,6 +8,7 @@ import java.util.List;
  */
 public class 打印从1到最大的n位数 {
 
+
     // 考虑大数 使用全排列
     public List<String> printNumbers(int n) {
         return null;
