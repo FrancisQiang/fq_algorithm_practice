@@ -6,6 +6,35 @@ package com.fq.sort;
  */
 public class QuickSort {
 
+    public static void main(String[] args) {
+        int[] nums = new int[]{4,2,5,9,8};
+        quickSort(nums, 0, nums.length - 1);
+        SortUtils.print(nums);
+    }
+
+    public static void quickSort(int[] nums, int l, int r) {
+        if (l >= r) {
+            return;
+        }
+        int p = partition(nums, l, r);
+        quickSort(nums, l, p - 1);
+        quickSort(nums, p + 1, r);
+    }
+
+    public static int partition(int[] nums, int l, int r) {
+        int basicNum = nums[l];
+        int j = l;
+        for (int i = l + 1; i <= r; i++) {
+            if (nums[i] < basicNum) {
+                j++;
+                SortUtils.swap(nums, i, j);
+                // 将小于基准数的都放在j位置左边
+            }
+        }
+        SortUtils.swap(nums, j, l);
+        return j;
+    }
+
 
     public static void quickSort3(int[] nums, int l, int r) {
         // 递归终止，如果左右边间相等或者右边界小于左边界则直接返回
