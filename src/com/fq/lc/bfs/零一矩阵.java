@@ -1,4 +1,4 @@
-package com.fq.lc.recurrence;
+package com.fq.lc.bfs;
 
 import java.util.LinkedList;
 import java.util.Queue;
