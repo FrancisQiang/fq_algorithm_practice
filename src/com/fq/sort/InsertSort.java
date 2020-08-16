@@ -4,7 +4,7 @@ package com.fq.sort;
  * @author lgq
  * @date 2020/6/6
  */
-public class InsertSort {
+public class  InsertSort {
 
     public static void insertSort(int[] nums) {
         for (int i = 1; i < nums.length; i++) {
